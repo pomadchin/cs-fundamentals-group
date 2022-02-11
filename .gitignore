@@ -1,2 +1,8 @@
 # Ignore macOS files
 .DS_Store
+
+# VSCode files
+.history
+
+# binaries per week
+cs-50/week-1/mario
