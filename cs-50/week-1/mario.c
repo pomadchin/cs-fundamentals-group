@@ -4,22 +4,38 @@
 
 int main(void)
 {
-    int input = get_int("How many bricks do you want? "); 
-    //rows
-    for( int r = 1; r <= input+1; r = r + 1 ){
-        string row1 = "";
-        string row2 = "";
-        //columns
-        for( int c = 1 ; c <= input+1; c = c + 1 ){
-            if( r > c ){
-                strcat(row1, " ");
-                strcat(row2, "#");
+    int rows = get_int("How many bricks do you want? ");
+    int columns = (rows * 2) + 1;
+
+    // rows
+    for (int r = 1; r <= rows; r = r + 1)
+    {
+        // 100 is just a large number
+        // more on why we need to do this https://stackoverflow.com/questions/25502272/strcat-in-c-program-is-not-working
+        char row_string[100] = "";
+        // columns
+        for (int c = 1; c <= columns; c = c + 1)
+        {
+            // first row spaces
+            if (c <= rows - r)
+            {
+                strcat(row_string, " ");
             }
-            else {
-                strcat(row2, " ");
-                strcat(row1, "#");
+            // middle of bricks case
+            else if (c == rows + 1)
+            {
+                strcat(row_string, " ");
+            }
+            // beyond the final set of #s
+            else if (c > rows + 1 + r)
+            {
+                strcat(row_string, " ");
+            }
+            else
+            {
+                strcat(row_string, "#");
             }
         }
-      printf("%s %s\n", row1, row2);
-   }
+        printf("%s\n", row_string);
+    }
 }
