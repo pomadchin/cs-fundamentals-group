@@ -29,7 +29,7 @@ We're going to learn computer science! Once a week we'll meet and work on proble
 **Resource:** [Harvard's CS50 Coursera Course](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
 | Progress| Module | Problem Sets | Solutions |
 |:----------|:-------------|:------|:------|
-| :point_right: | [Week 1: C](https://cs50.harvard.edu/x/2022/weeks/1/) | <ul><li>[Set 1](https://cs50.harvard.edu/x/2022/psets/1/mario/more/)</li><li>[Set 2](https://cs50.harvard.edu/x/2022/psets/1/credit/)</li></ul> | [WIP: Problem Set 1](/cs-50/week-1) |
+| :point_right: | [Week 1: C](https://cs50.harvard.edu/x/2022/weeks/1/) | <ul><li>[Set 1](https://cs50.harvard.edu/x/2022/psets/1/mario/more/)</li><li>[Set 2](https://cs50.harvard.edu/x/2022/psets/1/credit/)</li></ul> | [Problem Set 1](/cs-50/week-1) <br /> [WIP: Problem Set 2](/cs-50/week-1) |
 | | [Week 2: Arrays](https://cs50.harvard.edu/x/2022/weeks/2/) | <ul><li>[Set 1](https://cs50.harvard.edu/x/2022/psets/2/substitution/)</li></ul>| |
 | | Week 3: Algorithms | | |
 | | Week 4: Memory | | |
