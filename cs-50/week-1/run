@@ -1,4 +1,7 @@
 #!/bin/bash
 
-cc     mario.c   -o mario -lcs50
-./mario
+# cc     mario.c   -o mario -lcs50
+# ./mario
+
+cc     credit.c   -o credit -lcs50
+./credit
