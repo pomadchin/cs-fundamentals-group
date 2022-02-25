@@ -19,13 +19,52 @@
 
 int main(void){
 
+    int sum_evens = 0;
+    int sum_odds = 0;
+    int first_two_digits = 0;
     long long credit = get_long_long("Number: ");
     // invalid if not 13, 15, 16 digit number
-    if((1e12 <= credit && credit < 1e13) || (1e14 <= credit && credit < 1e16)){
-        printf("%lld", credit);
-    }
-    else {
+    if(!((1e12 <= credit && credit < 1e13) || (1e14 <= credit && credit < 1e16))){
         printf("INVALID");
+        return -1;
     }
-
+    int value_check = 1;
+    while(credit > 0){
+        if(9 < credit && credit < 100){
+            first_two_digits = credit;
+        }
+        int digit = credit % 10;
+        if(value_check % 2 == 0){
+            int multiple = (digit * 2);
+            while(multiple > 0){
+                int other_digit = multiple % 10;
+                sum_evens += other_digit;
+                multiple = multiple / 10;
+            }
+        }
+        else{
+            sum_odds += digit;
+        }
+        credit = credit / 10;
+        value_check = value_check + 1;
+    }
+    int total_sum = sum_evens + sum_odds;
+    if (total_sum % 10 != 0){
+        printf("INVALID");
+        return -1;
+    }
+    if(50 < first_two_digits && first_two_digits < 56){
+        printf("MASTERCARD");
+        return 0;
+    }
+    if(first_two_digits / 10 == 4){
+        printf("VISA");
+        return 0;
+    }
+    if(first_two_digits == 34 || first_two_digits == 37){
+        printf("American Express");
+        return 0;
+    }
+    printf("OTHER");
+    return 0;
 }
