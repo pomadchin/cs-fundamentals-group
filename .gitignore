@@ -3,8 +3,10 @@
 
 # VSCode files
 .history
+.vscode
 
 # binaries per week
 cs-50/week-1/mario
 cs-50/week-1/credit
 cs-50/week-2/caesar
+cs-50/week-2/substitution

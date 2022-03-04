@@ -23,12 +23,18 @@ jobs:
           curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
           sudo apt install libcs50
 
-      - name: Build Weeks
+      - name: Build
         run: |
-          cd cs-50/week-1
-          cc credit.c -o credit -lcs50
-          cc mario.c -o mario -lcs50
-          cd ~-
-          cd cs-50/week-2
-          cc caesar.c -o caesar -lcs50
-          cd ~-
+          # fun to compile all c files in the folder
+          function compile() {
+              for filename in *.c; do
+                  cc "$filename" -o "${filename%%.*}" -lcs50
+              done
+          }
+
+          # jump into the work dir
+          cd cs-50;
+          # for each week compile
+          for dir in week*; do
+            cd "$dir"; compile; cd ~-
+          done  
