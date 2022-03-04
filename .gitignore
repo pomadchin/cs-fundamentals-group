@@ -5,8 +5,9 @@
 .history
 .vscode
 
-# binaries per week
-cs-50/week-1/mario
-cs-50/week-1/credit
-cs-50/week-2/caesar
-cs-50/week-2/substitution
+# ignore binaries per week
+/cs-50/week-*/*
+# unignore sources per week
+!/cs-50/week-*/*.c 
+# unignore run scripts per week
+!/cs-50/week-*/*.sh 
