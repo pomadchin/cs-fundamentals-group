@@ -1,0 +1,34 @@
+name: CI
+on:
+  pull_request:
+    branches: ['**']
+  push:
+    branches: ['**']
+    tags: [v*]
+jobs:
+  build:
+    name: Build and Test
+    if: github.event_name == 'push'
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install libCS50
+        run: |
+          curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
+          sudo apt install libcs50
+
+      - name: Build Weeks
+        run: |
+          cd cs-50/week-1
+          cc credit.c -o credit -lcs50
+          cc mario.c -o mario -lcs50
+          cd ~-
+          cd cs-50/week-2
+          cc caesar.c -o caesar -lcs50
+          cd ~-
