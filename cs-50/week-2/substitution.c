@@ -20,11 +20,6 @@ int main(int argc, string argv[]) {
         return -1;
     }
 
-    // convert it to lower case
-    for(int i = 0; i < strlen(key); i++) {
-        key[i] = tolower(key[i]);
-    }
-
     string s = get_string("");
 
     printf("\n");
@@ -34,9 +29,9 @@ int main(int argc, string argv[]) {
     for(int i = 0; i < strlen(s); i++) {
         char c = s[i];
         if(islower(c)) {
-            s[i] = key[(c - 'a')];
+            s[i] = tolower(key[(c - 'a')]);
         } else if(isupper(c)) {
-            s[i] = toupper(key[(tolower(c) - 'A')]);
+            s[i] = toupper(key[(c - 'A')]);
         }
     }
 
